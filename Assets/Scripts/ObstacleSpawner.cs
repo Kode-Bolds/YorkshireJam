@@ -30,17 +30,17 @@ public class ObstacleSpawner : MonoBehaviour
 
         if(randomSpawnChance1 < spawnChance1 && Time.timeScale == 1)
         {
-            Instantiate(obstacle1, new Vector3(spawnPos, 0, player.transform.position.z + 40), new Quaternion());
+            Instantiate(obstacle1, new Vector3(spawnPos, -1, player.transform.position.z + 40), new Quaternion());
         }
 
         if (randomSpawnChance2 < spawnChance2 && Time.timeScale == 1)
         {
-            Instantiate(obstacle2, new Vector3(spawnPos, 0, player.transform.position.z + 40), new Quaternion());
+            Instantiate(obstacle2, new Vector3(spawnPos, -1, player.transform.position.z + 40), new Quaternion());
         }
 
         if (randomSpawnChance3 < spawnChance3 && Time.timeScale == 1)
         {
-            Instantiate(obstacle3, new Vector3(spawnPos, 0, player.transform.position.z + 40), new Quaternion());
+            Instantiate(obstacle3, new Vector3(spawnPos, -1, player.transform.position.z + 40), new Quaternion());
         }
     }
 }
