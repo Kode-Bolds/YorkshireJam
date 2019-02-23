@@ -181,26 +181,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &5237223228552905767 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5237223228552905767, guid: a1ffc1496e5319c408fb22a31bbe9526,
-    type: 3}
-  m_PrefabInstance: {fileID: 5821317036049481522}
-  m_PrefabAsset: {fileID: 0}
---- !u!136 &5237223228552905772
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5237223228552905767}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.1
-  m_Height: 3
-  m_Direction: 2
-  m_Center: {x: 0, y: -1, z: 0}
 --- !u!1001 &5821317036049481522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -270,71 +250,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5237223228552905768, guid: a1ffc1496e5319c408fb22a31bbe9526,
         type: 3}
-      propertyPath: sidePushForce
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5237223228552905768, guid: a1ffc1496e5319c408fb22a31bbe9526,
-        type: 3}
-      propertyPath: speedMultiplier
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5237223228552905768, guid: a1ffc1496e5319c408fb22a31bbe9526,
-        type: 3}
       propertyPath: turnRate
-      value: 0.01
+      value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 5237223228552905769, guid: a1ffc1496e5319c408fb22a31bbe9526,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5237223228552905769, guid: a1ffc1496e5319c408fb22a31bbe9526,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 52
-      objectReference: {fileID: 0}
-    - target: {fileID: 5237223228552905769, guid: a1ffc1496e5319c408fb22a31bbe9526,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5237223228552905770, guid: a1ffc1496e5319c408fb22a31bbe9526,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5237223228552905770, guid: a1ffc1496e5319c408fb22a31bbe9526,
-        type: 3}
-      propertyPath: m_WheelDampingRate
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5237223228552905770, guid: a1ffc1496e5319c408fb22a31bbe9526,
-        type: 3}
-      propertyPath: m_SuspensionDistance
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5237223228552905770, guid: a1ffc1496e5319c408fb22a31bbe9526,
-        type: 3}
-      propertyPath: m_ForceAppPointDistance
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5237223228552905770, guid: a1ffc1496e5319c408fb22a31bbe9526,
-        type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5237223228552905770, guid: a1ffc1496e5319c408fb22a31bbe9526,
-        type: 3}
-      propertyPath: m_Center.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5237223228552905770, guid: a1ffc1496e5319c408fb22a31bbe9526,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5237223228552905770, guid: a1ffc1496e5319c408fb22a31bbe9526, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1ffc1496e5319c408fb22a31bbe9526, type: 3}
 --- !u!1001 &9092396104405324165
 PrefabInstance:
@@ -402,11 +321,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9092396104481601359, guid: b585f7557e97d024c882da0444ce237c,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b585f7557e97d024c882da0444ce237c, type: 3}

@@ -36,15 +36,16 @@ public class PlayerController : MonoBehaviour
                 rb.AddForceAtPosition(new Vector3(sidePushForce * Time.deltaTime, 0, 0), tf.position + new Vector3(0, 0.5f, 0));                
             }
 
-            tf.Translate(new Vector3((tf.eulerAngles.z - 180) * turnRate * Time.deltaTime, 0, speedMultiplier * Time.deltaTime), Space.World);
-            //if (tf.eulerAngles.z < 180)
-            //{
-            //    tf.Translate(new Vector3(-speedMultiplier * Time.deltaTime, 0, 0), Space.World);
-            //}
-            //else
-            //{
-            //    tf.Translate(new Vector3(speedMultiplier * Time.deltaTime, 0, 0), Space.World);
-            //}
+            float angle = tf.eulerAngles.z;
+            if (angle > 180)
+            {
+                angle = 360 - angle;
+            }
+            else
+            {
+                angle = -angle;
+            }
+            tf.Translate(new Vector3(angle * turnRate * Time.deltaTime, 0, speedMultiplier * Time.deltaTime), Space.World);
         }   
     }
 }
