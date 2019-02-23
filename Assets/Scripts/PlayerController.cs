@@ -6,8 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Control Modifiers")]
     public float speedMultiplier = 2f;
-    public float turnRate = 2;
     public float sidePushForce = 0.1f;
+    public float turnRate = 2;
 
     private Rigidbody rb;
     private Transform tf;
@@ -22,24 +22,29 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-
-        if (Input.GetKeyDown(KeyCode.A))
+        if(Time.timeScale == 1)
         {
-            rb.AddRelativeForce(new Vector3(sidePushForce / (Mathf.Max(rb.transform.rotation.z, 1)), 0, 0), ForceMode.Impulse);
-            rb.AddTorque(new Vector3(0, -turnRate, 0));
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            rb.AddRelativeForce(new Vector3(sidePushForce / (Mathf.Max(rb.transform.rotation.z, 1)), 0, 0), ForceMode.Impulse);
-            rb.AddTorque(new Vector3(0, turnRate, 0));
-        }
-        tf.Translate(new Vector3(tf.forward.x * speedMultiplier * Time.deltaTime, 0, 0), Space.World);
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        rb.AddRelativeForce(new Vector3(0, 0, -50), ForceMode.Impulse);
+            if (Input.GetKey(KeyCode.A))
+            {
+                rb.AddForceAtPosition(new Vector3(-sidePushForce * Time.deltaTime, 0, 0), tf.position + new Vector3(0, 0.5f, 0));
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                rb.AddForceAtPosition(new Vector3(sidePushForce * Time.deltaTime, 0, 0), tf.position + new Vector3(0, 0.5f, 0));                
+            }
+
+            tf.Translate(new Vector3((tf.eulerAngles.z - 180) * turnRate * Time.deltaTime, 0, speedMultiplier * Time.deltaTime), Space.World);
+            //if (tf.eulerAngles.z < 180)
+            //{
+            //    tf.Translate(new Vector3(-speedMultiplier * Time.deltaTime, 0, 0), Space.World);
+            //}
+            //else
+            //{
+            //    tf.Translate(new Vector3(speedMultiplier * Time.deltaTime, 0, 0), Space.World);
+            //}
+        }   
     }
 }
