@@ -14,11 +14,14 @@ public class Obstacle : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.Translate(Vector3.back * speed * Time.deltaTime, Space.World);
-
-        if(transform.position.z < 1)
+        if(Time.timeScale == 1)
         {
-            Destroy(this);
+            transform.Translate(Vector3.back * speed * Time.deltaTime, Space.World);
+        }
+
+        if(transform.position.z < -5)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -26,12 +29,12 @@ public class Obstacle : MonoBehaviour
     {
         if(collision.gameObject.tag != "Obstacle")
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
 
         if(collision.gameObject.tag == "Player")
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }
