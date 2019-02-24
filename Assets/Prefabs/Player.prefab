@@ -104,7 +104,6 @@ GameObject:
   - component: {fileID: 5237223228552905769}
   - component: {fileID: 5237223228552905771}
   - component: {fileID: 5237223228552905772}
-  - component: {fileID: 6423430514991565408}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -344,10 +343,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7744672183324936955}
     m_Modifications:
-    - target: {fileID: 100000, guid: 85db1fe0e0b6d8c47b3ce9f0c274f29c, type: 3}
-      propertyPath: m_Name
-      value: Bike
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 85db1fe0e0b6d8c47b3ce9f0c274f29c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -403,6 +398,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 85db1fe0e0b6d8c47b3ce9f0c274f29c, type: 3}
       propertyPath: m_LocalScale.z
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 85db1fe0e0b6d8c47b3ce9f0c274f29c, type: 3}
+      propertyPath: m_Name
+      value: Bike
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85db1fe0e0b6d8c47b3ce9f0c274f29c, type: 3}
