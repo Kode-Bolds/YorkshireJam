@@ -24,7 +24,7 @@ public class ObstacleSpawner : MonoBehaviour
         {
             int spawnPos = Random.Range(-4, 6);
 
-            GameObject ob = Instantiate(obstacle1, new Vector3(spawnPos, -2.8f, player.transform.position.z + i), Quaternion.Euler(0, Random.Range(0, 180), 0));
+            GameObject ob = Instantiate(obstacle1, new Vector3(spawnPos, -2.55f, player.transform.position.z + i), Quaternion.Euler(0, Random.Range(0, 180), 0));
             obstacles.Add(ob);
         }
     }
@@ -52,19 +52,19 @@ public class ObstacleSpawner : MonoBehaviour
 
         if (randomSpawnChance1 < spawnChance1 && Time.timeScale == 1)
         {
-            GameObject ob = Instantiate(obstacle1, new Vector3(spawnPos, -2.8f, player.transform.position.z + 175), Quaternion.Euler(0, Random.Range(0, 180), 0));
+            GameObject ob = Instantiate(obstacle1, new Vector3(spawnPos, -2.55f, player.transform.position.z + 175), Quaternion.Euler(0, Random.Range(0, 180), 0));
             obstacles.Add(ob);
         }
 
         if (randomSpawnChance2 < spawnChance2 && Time.timeScale == 1)
         {
-            GameObject ob = Instantiate(obstacle2, new Vector3(spawnPos, -2.8f, player.transform.position.z + 175), Quaternion.Euler(0, Random.Range(0, 180), 0));
+            GameObject ob = Instantiate(obstacle2, new Vector3(spawnPos, -2.55f, player.transform.position.z + 175), Quaternion.Euler(0, Random.Range(0, 180), 0));
             obstacles.Add(ob);
         }
 
         if (randomSpawnChance3 < spawnChance3 && Time.timeScale == 1)
         {
-            GameObject ob = Instantiate(obstacle3, new Vector3(spawnPos, -2.8f, player.transform.position.z + 175), Quaternion.Euler(0, Random.Range(0, 180), 0));
+            GameObject ob = Instantiate(obstacle3, new Vector3(spawnPos, -2.55f, player.transform.position.z + 175), Quaternion.Euler(0, Random.Range(0, 180), 0));
             obstacles.Add(ob);
         }
     }
