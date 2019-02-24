@@ -199,7 +199,6 @@ GameObject:
   - component: {fileID: 354794439}
   - component: {fileID: 354794438}
   - component: {fileID: 354794437}
-  - component: {fileID: 354794441}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -288,18 +287,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &354794441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 354794436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d62bcdac4dbd7f249bccf74126c93c25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &444072391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -320,7 +307,7 @@ PrefabInstance:
     - target: {fileID: 9092396104481601359, guid: b585f7557e97d024c882da0444ce237c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9092396104481601359, guid: b585f7557e97d024c882da0444ce237c,
         type: 3}
@@ -389,12 +376,12 @@ PrefabInstance:
     - target: {fileID: 7744672183324936955, guid: a1ffc1496e5319c408fb22a31bbe9526,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.142
       objectReference: {fileID: 0}
     - target: {fileID: 7744672183324936955, guid: a1ffc1496e5319c408fb22a31bbe9526,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.606
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7744672183324936955, guid: a1ffc1496e5319c408fb22a31bbe9526,
         type: 3}
@@ -912,6 +899,7 @@ GameObject:
   - component: {fileID: 2069267478}
   - component: {fileID: 2069267477}
   - component: {fileID: 2069267476}
+  - component: {fileID: 2069267480}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -960,9 +948,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle1: {fileID: 7434387581928632306, guid: 1f0b71f8540386e47b1e5cefeb2bf8a0,
     type: 3}
-  obstacle2: {fileID: 4563462710721715966, guid: 222f1939f06d3de479f714e7ccf98a26,
+  obstacle2: {fileID: 7434387581928632306, guid: 1f0b71f8540386e47b1e5cefeb2bf8a0,
     type: 3}
-  obstacle3: {fileID: 6100235305691786836, guid: af8edc5f2e77038438c807fed463e630,
+  obstacle3: {fileID: 7434387581928632306, guid: 1f0b71f8540386e47b1e5cefeb2bf8a0,
     type: 3}
   player: {fileID: 2005430341}
   spawnChance1: 1
@@ -982,3 +970,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2069267480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069267475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee00cfb5c0b2b5745abcf002d7b1e0a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xBoundRight: 6
+  xBoundLeft: -6
+  player: {fileID: 2005430341}
