@@ -16,7 +16,11 @@ public class ObstacleSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        for (int i = 15; i < 175; i+=15)
+        {
+            int spawnPos = Random.Range(-4, 6);
+            Instantiate(obstacle1, new Vector3(spawnPos, -3, player.transform.position.z + i), Quaternion.Euler(0, Random.Range(0, 180), 0));
+        }
     }
 
     // Update is called once per frame
@@ -30,17 +34,17 @@ public class ObstacleSpawner : MonoBehaviour
 
         if(randomSpawnChance1 < spawnChance1 && Time.timeScale == 1)
         {
-            Instantiate(obstacle1, new Vector3(spawnPos, 1, player.transform.position.z + 175), new Quaternion());
+            Instantiate(obstacle1, new Vector3(spawnPos, -3, player.transform.position.z + 175), Quaternion.Euler(0, Random.Range(0, 180), 0));
         }
 
         if (randomSpawnChance2 < spawnChance2 && Time.timeScale == 1)
         {
-            Instantiate(obstacle2, new Vector3(spawnPos, 1, player.transform.position.z + 175), new Quaternion());
+            Instantiate(obstacle2, new Vector3(spawnPos, -3, player.transform.position.z + 175), Quaternion.Euler(0, Random.Range(0, 180), 0));
         }
 
         if (randomSpawnChance3 < spawnChance3 && Time.timeScale == 1)
         {
-            Instantiate(obstacle3, new Vector3(spawnPos, 1, player.transform.position.z + 175), new Quaternion());
+            Instantiate(obstacle3, new Vector3(spawnPos, -3, player.transform.position.z + 175), Quaternion.Euler(0, Random.Range(0, 180), 0));
         }
     }
 }
