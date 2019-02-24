@@ -56,7 +56,7 @@ public class TerrainSpawner : MonoBehaviour
     {
         for (int i = 0; i < walls.Count; i++)
         {
-            if (player.transform.position.z > walls[i].transform.position.z)
+            if (player.transform.position.z > walls[i].transform.position.z + 25)
             {
                 walls[i].transform.Translate(0, 0, terrain.terrainData.size.z, Space.World);
             }
