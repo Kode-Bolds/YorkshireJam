@@ -47,13 +47,13 @@ public class TerrainSpawner : MonoBehaviour
             float random = Random.Range(0, 100);
             if (spawnChance < random)
             {
-                GameObject rightWall = Instantiate(wall, new Vector3(7, -2.8f, i * 2.6f - 8.75f), Quaternion.identity, null);
+                GameObject rightWall = Instantiate(wall, new Vector3(7, -3.0f, i * 2.6f - 8.75f), Quaternion.identity, null);
                 rightWall.transform.rotation *= Quaternion.Euler(0, 90f, 0);
                 walls.Add(rightWall);
             }
             else
             {
-                GameObject rightFence = Instantiate(fence, new Vector3(7, -2.8f, i * 2.6f - 8.75f), Quaternion.identity, null);
+                GameObject rightFence = Instantiate(fence, new Vector3(7, -3.0f, i * 2.6f - 8.75f), Quaternion.identity, null);
                 rightFence.transform.rotation *= Quaternion.Euler(0, 90f, 0);
                 walls.Add(rightFence);
             }
@@ -61,13 +61,13 @@ public class TerrainSpawner : MonoBehaviour
             random = Random.Range(0, 100);
             if (spawnChance < random)
             {
-                GameObject leftWall = Instantiate(wall, new Vector3(-7, -2.8f, i * 2.6f - 8.75f), Quaternion.identity, null);
+                GameObject leftWall = Instantiate(wall, new Vector3(-7, -3.0f, i * 2.6f - 8.75f), Quaternion.identity, null);
                 leftWall.transform.rotation *= Quaternion.Euler(0, -90, 0);
                 walls.Add(leftWall);
             }
             else
             {
-                GameObject leftFence = Instantiate(fence, new Vector3(-7, -2.8f, i * 2.6f - 8.75f), Quaternion.identity, null);
+                GameObject leftFence = Instantiate(fence, new Vector3(-7, -3.0f, i * 2.6f - 8.75f), Quaternion.identity, null);
                 leftFence.transform.rotation *= Quaternion.Euler(0, -90f, 0);
                 walls.Add(leftFence);
             }
