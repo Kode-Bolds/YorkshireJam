@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
 {
-    public Text scoreText;
 
-    private float timeAlive;
+    private static float timeAlive;
+    public Text scoreText;
 
     // Start is called before the first frame update
     void Start()
