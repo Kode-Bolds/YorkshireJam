@@ -12,6 +12,11 @@ public class TerrainSpawner : MonoBehaviour
     List<Terrain> terrains;
     List<GameObject> roads;
 
+    float defaultTerrainX = -250;
+    float defaultTerrainY = -3;
+
+    Terrain terrain1;
+    Terrain terrain2;
 
     // Start is called before the first frame update
     void Start()
@@ -20,10 +25,10 @@ public class TerrainSpawner : MonoBehaviour
         terrains = new List<Terrain>();
         roads = new List<GameObject>();
 
-        Terrain terrain1 = Instantiate(terrain, new Vector3(-250, -3, -10), Quaternion.identity, null);
+        Terrain terrain1 = Instantiate(terrain, new Vector3(defaultTerrainX, defaultTerrainY, -10), Quaternion.identity, null);
         terrains.Add(terrain1);
 
-        Terrain terrain2 = Instantiate(terrain, new Vector3(-250, -3, 490), Quaternion.identity, null);
+        Terrain terrain2 = Instantiate(terrain, new Vector3(defaultTerrainX, defaultTerrainY, 490), Quaternion.identity, null);
         terrains.Add(terrain2);
 
         GameObject road1 = Instantiate(road, new Vector3(0, -2.6f, 240), Quaternion.identity, null);
@@ -38,17 +43,21 @@ public class TerrainSpawner : MonoBehaviour
     {
         if (player.transform.position.z > (terrains[0].transform.position.z + terrain.terrainData.size.z))
         {
+            terrains[0].transform.Translate(0, 0,  terrains[1].terrainData.size.z * 2);
 
-            // CREATE NEW OBJECTS
-            Terrain newTerrain = Instantiate(terrain, new Vector3(terrains[1].transform.position.x, terrains[1].transform.position.y, terrains[1].transform.position.z + terrain.terrainData.size.z), Quaternion.identity, null);
-            terrains.Add(newTerrain);
-            GameObject newRoad = Instantiate(road, new Vector3(roads[1].transform.position.x, roads[1].transform.position.y, roads[1].transform.position.z + terrain.terrainData.size.z), Quaternion.identity, null);
-            roads.Add(newRoad);
+            Terrain temp = terrains[0];
+            terrains.Remove(terrains[0]);
+            terrains.Add(temp);
 
-            // DESTROY OLD OBJECTS (BEHIND PLAYER)
-            Destroy(terrains[0]);
-            Destroy(roads[0]);
+
+            roads[0].transform.Translate(0, 0, terrains[1].terrainData.size.z * 2);
+
+            GameObject tempRoad = roads[0];
+            roads.Remove(roads[0]);
+            roads.Add(tempRoad);
+
         }
+        
 
         // if the player reaches the second terrain
         // delete the first terrain
