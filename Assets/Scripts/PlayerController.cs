@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -47,5 +48,14 @@ public class PlayerController : MonoBehaviour
             }
             tf.Translate(new Vector3(angle * turnRate * Time.deltaTime, 0, speedMultiplier * Time.deltaTime), Space.World);
         }   
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            SceneManager.LoadScene("GameOver");
+            SceneManager.UnloadSceneAsync("MainGame");
+        }
     }
 }
