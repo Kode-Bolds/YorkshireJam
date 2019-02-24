@@ -1,20 +1,40 @@
 fileFormatVersion: 2
-guid: b209b515eabba8e4a8d046f8a06b283c
+guid: ca637d6679b43024cacb593c593150b9
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: hand_free:object0_default
+    100004: hand_free:object0_default1
+    100006: hand_free:transform1
+    100008: hand_free:transform2
+    100010: Head:Group53805
+    100012: Head:polySurface23
+    100014: Head:polySurface23 1
+    100016: Head:polySurface24
+    100018: Head:transform1
+    100020: Head:transform2
     400000: //RootNode
-    2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pCube8
+    400002: hand_free:object0_default
+    400004: hand_free:object0_default1
+    400006: hand_free:transform1
+    400008: hand_free:transform2
+    400010: Head:Group53805
+    400012: Head:polySurface23
+    400014: Head:polySurface23 1
+    400016: Head:polySurface24
+    400018: Head:transform1
+    400020: Head:transform2
+    2100000: hand_free_lambert1
+    2300000: hand_free:object0_default1
+    3300000: hand_free:object0_default1
+    4300000: hand_free:object0_default1
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 9279f2c04d00fcd46a4838e4957cc7fb, type: 2}
+      name: hand_free_lambert1
+    second: {fileID: 2100000, guid: d6f024883343851419a4ab6df38ed392, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
