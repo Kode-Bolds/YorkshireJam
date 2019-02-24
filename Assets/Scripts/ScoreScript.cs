@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
 {
-    public Text scoreText;
 
     private float timeAlive;
+    public Text scoreText;
+  
 
     // Start is called before the first frame update
     void Start()
@@ -20,5 +21,10 @@ public class ScoreScript : MonoBehaviour
     {
         timeAlive += Time.deltaTime;
         scoreText.text = "Time Passed: " + timeAlive.ToString("F2");
+    }
+
+    private void OnDestroy()
+    {
+        StaticVars.score = timeAlive;
     }
 }

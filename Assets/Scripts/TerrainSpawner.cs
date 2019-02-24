@@ -6,12 +6,19 @@ public class TerrainSpawner : MonoBehaviour
 {
     public Terrain terrain;
     public GameObject road;
+    public GameObject wall;
 
     GameObject player;
 
     List<Terrain> terrains;
     List<GameObject> roads;
+    List<GameObject> walls;
 
+    float defaultTerrainX = -250;
+    float defaultTerrainY = -3;
+
+    Terrain terrain1;
+    Terrain terrain2;
 
     // Start is called before the first frame update
     void Start()
@@ -19,36 +26,62 @@ public class TerrainSpawner : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         terrains = new List<Terrain>();
         roads = new List<GameObject>();
+        walls = new List<GameObject>();
 
-        Terrain terrain1 = Instantiate(terrain, new Vector3(-250, -3, -10), Quaternion.identity, null);
+
+        Terrain terrain1 = Instantiate(terrain, new Vector3(defaultTerrainX, defaultTerrainY, -10), Quaternion.identity, null);
         terrains.Add(terrain1);
-
-        Terrain terrain2 = Instantiate(terrain, new Vector3(-250, -3, 490), Quaternion.identity, null);
+        Terrain terrain2 = Instantiate(terrain, new Vector3(defaultTerrainX, defaultTerrainY, 490), Quaternion.identity, null);
         terrains.Add(terrain2);
 
         GameObject road1 = Instantiate(road, new Vector3(0, -2.6f, 240), Quaternion.identity, null);
         roads.Add(road1);
-
         GameObject road2 = Instantiate(road, new Vector3(0, -2.6f, 740), Quaternion.identity, null);
         roads.Add(road2);
+
+        for (int i = 0; i < 192; i++)
+        {
+            GameObject rightWall = Instantiate(wall, new Vector3(7, -2.8f, i * 2.6f - 8.75f), Quaternion.identity, null);
+            rightWall.transform.rotation *= Quaternion.Euler(0, 90f, 0);
+            walls.Add(rightWall);
+
+            GameObject leftWall = Instantiate(wall, new Vector3(-7, -2.8f, i * 2.6f - 8.75f), Quaternion.identity, null);
+            leftWall.transform.rotation *= Quaternion.Euler(0, -90, 0);
+            walls.Add(leftWall);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        for (int i = 0; i < walls.Count; i++)
+        {
+            if (player.transform.position.z > walls[i].transform.position.z + 25)
+            {
+                walls[i].transform.Translate(0, 0, terrain.terrainData.size.z, Space.World);
+            }
+        }
+
         if (player.transform.position.z > (terrains[0].transform.position.z + terrain.terrainData.size.z))
         {
+            terrains[0].transform.Translate(0, 0, terrains[1].terrainData.size.z * 2);
 
-            // CREATE NEW OBJECTS
-            Terrain newTerrain = Instantiate(terrain, new Vector3(terrains[1].transform.position.x, terrains[1].transform.position.y, terrains[1].transform.position.z + terrain.terrainData.size.z), Quaternion.identity, null);
-            terrains.Add(newTerrain);
-            GameObject newRoad = Instantiate(road, new Vector3(roads[1].transform.position.x, roads[1].transform.position.y, roads[1].transform.position.z + terrain.terrainData.size.z), Quaternion.identity, null);
-            roads.Add(newRoad);
+            Terrain temp = terrains[0];
+            terrains.Remove(terrains[0]);
+            terrains.Add(temp);
 
-            // DESTROY OLD OBJECTS (BEHIND PLAYER)
-            Destroy(terrains[0]);
-            Destroy(roads[0]);
+
+            roads[0].transform.Translate(0, 0, terrains[1].terrainData.size.z * 2);
+
+            GameObject tempRoad = roads[0];
+            roads.Remove(roads[0]);
+            roads.Add(tempRoad);
+
+
+
+
         }
+
 
         // if the player reaches the second terrain
         // delete the first terrain

@@ -52,10 +52,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Ground")
-        {
-            SceneManager.LoadScene("GameOver");
-            SceneManager.UnloadSceneAsync("MainGame");
-        }
+     
     }
 }
