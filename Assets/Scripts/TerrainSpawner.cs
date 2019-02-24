@@ -49,8 +49,8 @@ public class TerrainSpawner : MonoBehaviour
 
         //if (spawnChanceHouse < random)
         //{
-        //    GameObject newHouse = Instantiate(house, new Vector3(20, 0, 0), Quaternion.identity, null);
-        //    houses.Add(newHouse);
+        GameObject newHouse = Instantiate(house, new Vector3(-37.5f, -0.8f, 70), Quaternion.identity, null);
+        houses.Add(newHouse);
         //}
 
 
@@ -91,6 +91,15 @@ public class TerrainSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //  Houses
+        for (int i = 0; i < houses.Count; i++)
+        {
+            if (player.transform.position.z > houses[i].transform.position.z + 25)
+            {
+                houses[i].transform.Translate(0, 0, terrain.terrainData.size.z, Space.World);
+            }
+        }
+
         for (int i = 0; i < walls.Count; i++)
         {
             if (player.transform.position.z > walls[i].transform.position.z + 25)
