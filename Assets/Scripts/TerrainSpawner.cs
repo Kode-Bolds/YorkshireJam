@@ -8,12 +8,14 @@ public class TerrainSpawner : MonoBehaviour
     public GameObject road;
     public GameObject wall;
     public GameObject fence;
+    public GameObject house;
 
     GameObject player;
 
     List<Terrain> terrains;
     List<GameObject> roads;
     List<GameObject> walls;
+    List<GameObject> houses;
 
     float defaultTerrainX = -250;
     float defaultTerrainY = -3;
@@ -28,6 +30,7 @@ public class TerrainSpawner : MonoBehaviour
         terrains = new List<Terrain>();
         roads = new List<GameObject>();
         walls = new List<GameObject>();
+        houses = new List<GameObject>();
 
         Terrain terrain1 = Instantiate(terrain, new Vector3(defaultTerrainX, defaultTerrainY, -10), Quaternion.identity, null);
         terrains.Add(terrain1);
@@ -39,9 +42,20 @@ public class TerrainSpawner : MonoBehaviour
         GameObject road2 = Instantiate(road, new Vector3(0, -2.6f, 740), Quaternion.identity, null);
         roads.Add(road2);
 
+        //// Houses
+        //int spawnChanceHouse = 2;
+
+        //int random = Random.Range(0, 100);
+
+        //if (spawnChanceHouse < random)
+        //{
+        //    GameObject newHouse = Instantiate(house, new Vector3(20, 0, 0), Quaternion.identity, null);
+        //    houses.Add(newHouse);
+        //}
+
+
+        // FENCES + GATES
         int spawnChance = 2;
-
-
         for (int i = 0; i < 192; i++)
         {
             float random = Random.Range(0, 100);

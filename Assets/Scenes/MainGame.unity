@@ -708,6 +708,7 @@ MonoBehaviour:
   road: {fileID: 9092396104481601356, guid: b585f7557e97d024c882da0444ce237c, type: 3}
   wall: {fileID: 3385725104988956378, guid: 59fa86051d7d55644a476c316d96fe19, type: 3}
   fence: {fileID: 4205882289325496210, guid: 256a5bb76b4d0054bacda7016d5bc241, type: 3}
+  house: {fileID: 7710552528597874786, guid: e0241bd84d79b5243898b1ad2c81b1ee, type: 3}
 --- !u!1 &1911953576
 GameObject:
   m_ObjectHideFlags: 0
