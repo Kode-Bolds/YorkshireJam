@@ -37,9 +37,9 @@ public class TerrainSpawner : MonoBehaviour
         Terrain terrain2 = Instantiate(terrain, new Vector3(defaultTerrainX, defaultTerrainY, 490), Quaternion.identity, null);
         terrains.Add(terrain2);
 
-        GameObject road1 = Instantiate(road, new Vector3(0, -2.6f, 240), Quaternion.identity, null);
+        GameObject road1 = Instantiate(road, new Vector3(0, -2.95f, 240), Quaternion.identity, null);
         roads.Add(road1);
-        GameObject road2 = Instantiate(road, new Vector3(0, -2.6f, 740), Quaternion.identity, null);
+        GameObject road2 = Instantiate(road, new Vector3(0, -2.95f, 740), Quaternion.identity, null);
         roads.Add(road2);
 
         //// Houses
