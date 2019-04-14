@@ -35,11 +35,11 @@ public class PlayerController : MonoBehaviour
         if (Time.timeScale == 1)
         {
 
-            if (Input.GetKey(KeyCode.A) || gyroscope.attitude.z < 0.5f)
+            if (Input.GetKey(KeyCode.A))
             {
                 rb.AddForceAtPosition(new Vector3(-sidePushForce * Time.deltaTime, 0, 0), tf.position + new Vector3(0, 0.5f, 0));
             }
-            if (Input.GetKey(KeyCode.D) || gyroscope.attitude.z > 0.5f)
+            if (Input.GetKey(KeyCode.D))
             {
                 rb.AddForceAtPosition(new Vector3(sidePushForce * Time.deltaTime, 0, 0), tf.position + new Vector3(0, 0.5f, 0));
             }
